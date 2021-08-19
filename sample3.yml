@@ -1,4 +1,10 @@
-state: present
+- name: Deploy on OpenStack
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Deploy an instance
+    os_server:
+      state: present
        name: vm1
        image: "auto-sync/ubuntu-bionic-18.04-amd64-server-20191021-disk1.img"
        key_name: automation-key
@@ -9,3 +15,4 @@ state: present
        security_groups: devzero_trust
        meta:
          os: ubuntu
+
