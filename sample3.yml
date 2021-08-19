@@ -6,6 +6,7 @@
     os_server:
       state: present
       name: vm1
+      image: "https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-desktop-amd64.iso"
       timeout: 200
       flavor: 693b91b1-16b7-4e5b-a222-a5de94c7a34d
       auto_ip: no
