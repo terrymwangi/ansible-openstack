@@ -3,7 +3,7 @@
   gather_facts: false
   tasks:
   - name: Deploy an instance
-    nova_compute:
+    os_server:
       state: present
       name: webserver
       image_name: centos-7-x86_64-genericcloud
