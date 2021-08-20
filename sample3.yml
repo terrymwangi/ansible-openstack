@@ -14,8 +14,6 @@
       meta:
          os: ubuntu
  
- - name: Deploy on OpenStack second Server
-   tasks:
    - name: centos server
      os_server:
        state: present
