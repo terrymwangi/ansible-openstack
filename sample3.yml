@@ -1,6 +1,6 @@
 - name: Deploy on OpenStack
   hosts: localhost
-  gather_facts: false
+  
   tasks:
   - name: ubuntu server
     os_server:
@@ -13,8 +13,8 @@
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
          os: ubuntu
- 
-   - name: centos server
+         
+  - name: centos server
      os_server:
        state: present
        name: centos server
@@ -27,4 +27,6 @@
        security_groups:  740133d4-7e52-4b09-9d8a-91940238f1cd
        meta:
          os: centos
+ 
+   
 
