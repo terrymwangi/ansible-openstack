@@ -17,7 +17,7 @@
   - name: ubuntu server
     os_server:
       state: present
-      name: vm1
+      name: gfh
       image: "ubuntu"
       timeout: 200
       flavor: ubuntu
