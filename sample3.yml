@@ -8,7 +8,9 @@
       name: vm1
       image: "https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-desktop-amd64.iso"
       timeout: 200
-      flavor: 693b91b1-16b7-4e5b-a222-a5de94c7a34d
+      flavor: 5b57f3a3-db93-49fb-a5aa-d32f74f8807b
+      auto_ip: no
+      security_groups: 3cc5d0c0-13ab-4c0e-8faa-9b2965c5c472
       meta:
          os: ubuntu
 
