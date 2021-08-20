@@ -10,7 +10,7 @@
       timeout: 200
       flavor: 5b57f3a3-db93-49fb-a5aa-d32f74f8807b
       auto_ip: no
-      network: f422acbd-0fda-4891-bd85-382d33a7154f
+      network: b7553c1059aa41ec83a3d195d4a9fc01
       security_groups: 740133d4-7e52-4b09-9d8a-91940238f1cd
       meta:
          os: ubuntu
