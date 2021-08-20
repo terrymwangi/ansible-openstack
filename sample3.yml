@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: false
   tasks:
-  - name: Deploy an instance
+  - name: ubuntu server
     os_server:
       state: present
       name: vm1
@@ -13,4 +13,18 @@
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
          os: ubuntu
+ 
+- name: Deploy on OpenStack second Server
+    os_server:
+       state: present
+       name: centos server
+       image: "centos 7"
+       key_name: automation-key
+       timeout: 200
+       flavor: centos
+       auto_ip: no
+       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
+       security_groups:  740133d4-7e52-4b09-9d8a-91940238f1cd
+       meta:
+         os: centos
 
