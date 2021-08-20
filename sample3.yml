@@ -7,11 +7,11 @@
     os_server:
       state: present
       name: vm2
-      image: "Centos 7"
+      image: "centos"
       timeout: 200
-      flavor: ubuntu
+      flavor: centos
       auto_ip: no
-      network: f422acbd-0fda-4891-bd85-382d33a7154f
+      network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
          os: centos
          
