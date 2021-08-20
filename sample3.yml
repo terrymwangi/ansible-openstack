@@ -27,7 +27,6 @@
       flavor: ubuntu
       auto_ip: no
       network: f422acbd-0fda-4891-bd85-382d33a7154f
-      security_groups:  740133d4-7e52-4b09-9d8a-91940238f1cd
       meta:
          os: centos
    
