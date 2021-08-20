@@ -5,6 +5,7 @@
   - name: centos server
     os_server:
       state: present
+      name: vm1
       image: "centos"
       timeout: 200
       flavor: centos
@@ -16,6 +17,7 @@
   - name: ubuntu server
     os_server:
       state: present
+      name: vm0
       image: "ubuntu"
       timeout: 200
       flavor: ubuntu
