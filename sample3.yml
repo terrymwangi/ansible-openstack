@@ -1,6 +1,5 @@
 - name: Deploy on OpenStack
   hosts: localhost
-  gather_facts: false
   
   tasks:
   - name: centos server
