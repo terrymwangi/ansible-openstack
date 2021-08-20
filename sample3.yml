@@ -6,7 +6,7 @@
     os_server:
       state: present
       name: vm1
-      image: "/v2/images/3a59faaa-cb6e-40af-b43e-1555effdda98/file"
+      image: "ubuntu"
       timeout: 200
       flavor: ubuntu
       meta:
