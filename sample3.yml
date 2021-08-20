@@ -6,7 +6,7 @@
     os_server:
       state: present
       name: vm1
-      image: "https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-desktop-amd64.iso"
+      image: "auto-sync/ubuntu-bionic-18.04-amd64-server-20191021-disk1.img"
       timeout: 200
       flavor: ubuntu
       meta:
