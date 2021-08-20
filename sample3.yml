@@ -21,7 +21,7 @@
       name: vm2
       image: "Centos 7"
       timeout: 200
-      flavor: centos
+      flavor: ubuntu
       auto_ip: no
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
