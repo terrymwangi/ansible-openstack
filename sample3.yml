@@ -6,7 +6,7 @@
     os_server:
       state: present
       name: vm1
-      image: "auto-sync/ubuntu-bionic-18.04-amd64-server-20191021-disk1.img"
+      image: "/v2/images/3a59faaa-cb6e-40af-b43e-1555effdda98/file"
       timeout: 200
       flavor: ubuntu
       meta:
