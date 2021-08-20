@@ -8,10 +8,12 @@
       state: present
       name: vm1
       image: "ubuntu"
+      key_name: automation-key
       timeout: 200
       flavor: ubuntu
       auto_ip: no
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
+      security_groups:  740133d4-7e52-4b09-9d8a-91940238f1cd
       meta:
          os: ubuntu
          
@@ -20,10 +22,12 @@
       state: present
       name: vm2
       image: "Centos 7"
+      key_name: automation-key
       timeout: 200
       flavor: ubuntu
       auto_ip: no
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
+      security_groups:  740133d4-7e52-4b09-9d8a-91940238f1cd
       meta:
          os: centos
    
