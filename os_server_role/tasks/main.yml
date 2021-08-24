@@ -1,0 +1,11 @@
+- name: Create Openstack Server
+  os_server:
+    name: "{{  item.key }}"
+    state: present
+    image: "{{  item.value.image }}"
+    timeout: 200
+    flavor: "{{  item.value.flavor }}"
+    auto_ip: no
+    network: "{{  item.value.network }}"
+    meta: "{{  item.value.tags }}"
+  with_dict: "{{ server_definitions }}"
