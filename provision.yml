@@ -28,4 +28,5 @@
    - name: Set up authorized keys for the delta user
      authorized_key: 
       user: svc_ansible
+      key: "AAAAB3NzaC1yc2EAAAADAQABAAABAQC3pIGqWwnpXdQKMcxG3onfRQYW+P7jD1SKmrjicfvcnna3cJq2+4bNnjxNirUsOOxJ4BE1jkY+LwHnPZsix/gHN1fsTrq8eR73wgyI0r0F/zXBEEMUUFXlyt8Eomr2e2UDGGhDaSR3EBCIhuPooFudRu3yXMduyc16XrWPs4+Xrf1Y1sOdiQ3tFRq9huWDYO4SlITY7SJwtPzziNrb7az+cG/dQiB/8rB+JccwLHQKLEc7c8Zfer66ogcQO4oT1CAjPXVaw98lq+VR1VzXVxjXta2ZWFrKNy7ToyxeFgrtkPtR+JHPSpxkNm6fQC8Yr9dkfWutlrpgwwUuIysjJzNV"
     
