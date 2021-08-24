@@ -2,6 +2,18 @@
   hosts: localhost
   
   tasks:
+  - name: ubuntu server
+    os_server:
+      state: present
+      name: vm2
+      image: "centos"
+      timeout: 200
+      flavor: centos
+      auto_ip: no
+      network: f422acbd-0fda-4891-bd85-382d33a7154f
+      meta:
+         os: centos
+         
   - name: centos server
     os_server:
       state: present
