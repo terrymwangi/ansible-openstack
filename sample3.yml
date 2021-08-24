@@ -5,7 +5,7 @@
   - name: ubuntu server xxx
     os_server:
       state: present
-      name: vm2
+      name: vm10
       image: "ubuntu"
       timeout: 200
       flavor: centos
@@ -17,7 +17,7 @@
   - name: ubuntu server
     os_server:
       state: present
-      name: vm2
+      name: vm7
       image: "ubuntu"
       timeout: 200
       flavor: centos
@@ -25,18 +25,6 @@
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
          os: ubuntu
-         
-    - name: ubuntu server2
-      os_server:
-        state: present
-        name: vm3
-        image: "centos"
-        timeout: 200
-        flavor: centos
-        auto_ip: no
-        network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
-        meta:
-           os: centos
          
   - name: ubuntu server3
     os_server:
