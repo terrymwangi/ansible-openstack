@@ -17,10 +17,10 @@
   - name: ubuntu server
     os_server:
       state: present
-      name: vm0
+      name: vm2
       image: "ubuntu"
       timeout: 200
-      flavor: ubuntu
+      flavor: centos
       auto_ip: no
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
