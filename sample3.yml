@@ -14,6 +14,30 @@
       meta:
          os: ubuntu
          
+  - name: ubuntu server2
+    os_server:
+      state: present
+      name: vm3
+      image: "centos"
+      timeout: 200
+      flavor: centos
+      auto_ip: no
+      network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
+      meta:
+         os: centos
+         
+  - name: ubuntu server3
+    os_server:
+      state: present
+      name: vm5
+      image: "centos"
+      timeout: 200
+      flavor: centos
+      auto_ip: no
+      network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
+      meta:
+         os: centos
+         
   - name: centos server
     os_server:
       state: present
@@ -25,6 +49,8 @@
       network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
       meta:
          os: centos
+         
+   
      
    
          
