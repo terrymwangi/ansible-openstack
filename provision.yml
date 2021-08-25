@@ -13,6 +13,11 @@
      group:
        name: wheel
        state: present
+       
+   - name: Wait 300 seconds, but only start checking after 60 seconds
+     wait_for_connection:
+      delay: 6000
+      timeout: 30000
 
    - name: Allow 'wheel' group to have passwordless sudo  
      lineinfile:
