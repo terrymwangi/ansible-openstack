@@ -1,7 +1,8 @@
 ---
 - name: Add User and distribute key 
   ignore_unreachable: true
-  remote_user: root
+  become_method: sudo
+  become_user: root
   gather_facts: no
   hosts: all
 
