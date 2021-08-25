@@ -1,6 +1,7 @@
 ---
 - name: Add User and distribute key 
   ignore_unreachable: true
+  remote_user: root
   gather_facts: no
   hosts: all
 
