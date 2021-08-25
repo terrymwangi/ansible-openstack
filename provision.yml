@@ -1,11 +1,7 @@
 ---
 - name: Add User and distribute key 
   wait_for_connection:
-  
-- name: Wait 300 seconds, but only start checking after 60 seconds
-  wait_for_connection:
-    delay: 60
-    timeout: 300
+
   gather_facts: yes
   hosts: all
 
