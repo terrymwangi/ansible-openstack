@@ -1,5 +1,6 @@
 ---
 - name: Add User and distribute key 
+  timeout: 1000
   gather_facts: no
   hosts: all
 
