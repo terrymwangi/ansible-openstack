@@ -10,8 +10,7 @@
        name: wheel
        state: present
 
-   - name: Allow 'wheel' group to have passwordless sudo
-     become: yes   
+   - name: Allow 'wheel' group to have passwordless sudo  
      lineinfile:
       dest: /etc/sudoers
       state: present
