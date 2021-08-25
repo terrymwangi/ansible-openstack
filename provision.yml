@@ -28,5 +28,5 @@
    - name: Set up authorized keys for the delta user
      authorized_key: 
       user: svc_ansible
-      key: "AAAAB3NzaC1yc2EAAAADAQABAAABAQC3pIGqWwnpXdQKMcxG3onfRQYW+P7jD1SKmrjicfvcnna3cJq2+4bNnjxNirUsOOxJ4BE1jkY+LwHnPZsix/gHN1fsTrq8eR73wgyI0r0F/zXBEEMUUFXlyt8Eomr2e2UDGGhDaSR3EBCIhuPooFudRu3yXMduyc16XrWPs4+Xrf1Y1sOdiQ3tFRq9huWDYO4SlITY7SJwtPzziNrb7az+cG/dQiB/8rB+JccwLHQKLEc7c8Zfer66ogcQO4oT1CAjPXVaw98lq+VR1VzXVxjXta2ZWFrKNy7ToyxeFgrtkPtR+JHPSpxkNm6fQC8Yr9dkfWutlrpgwwUuIysjJzNV"
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCurhe14ngNeGjCucWpf1Lc7PSNEQPXsWbtSve0LqrgEOFAz8nCWmwc2+1BoVNW6FW9mtmS3V6uodsl6ocTGtkd8ajXwE13uiK4la/oH8/GzcEP0tDRSxGLVOxvjHCsb+oc1fD+ZkGsqcYquvfc1UwGx2yHmzQpFGeo3ORjFMsxeQREUl+YGxlWEwHx7R93NmFbz/RCyPXPv882w/NUjdsGLO89JEk0Ro6/r7zBLCRpInhO7cXFZyqg4X30Ek0J7Z+37ypoMHEAufTg1gQC44X6SowpAE8gr24D/aEmz7WMYaQHdYwjFsmYtU6+i7G+CjDWZAIEGLBTryAwgKb4c0P9"
     
