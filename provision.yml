@@ -1,6 +1,6 @@
 ---
 - name: Add User and distribute key 
-  
+  ignore_unreachable: true
   gather_facts: no
   hosts: all
 
@@ -12,9 +12,8 @@
        
        
    - name: Allow 'wheel' group to have passwordless sudo  
-     become: yes
      lineinfile:
-      path: /etc/sudoers
+      dest: /etc/sudoers
       state: present
       regexp: '^%wheel'
       line: '%wheel ALL=(ALL) NOPASSWD: ALL'
