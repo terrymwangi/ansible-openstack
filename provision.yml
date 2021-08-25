@@ -1,6 +1,10 @@
 ---
 - name: Add User and distribute key 
-  wait_for_connection:
+  wait_for:
+   port: 22
+   delay: 10
+   timeout: 60
+  connection: ssh
 
   gather_facts: yes
   hosts: all
