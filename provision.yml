@@ -1,6 +1,6 @@
 ---
 - name: Add User and distribute key 
-  become: yes
+  
   gather_facts: no
   hosts: all
 
@@ -12,6 +12,7 @@
        
        
    - name: Allow 'wheel' group to have passwordless sudo  
+     become: yes
      lineinfile:
       path: /etc/sudoers
       state: present
