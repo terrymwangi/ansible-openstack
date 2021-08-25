@@ -8,8 +8,15 @@
      group:
        name: wheel
        state: present
+       
+       
+   - name: Allow 'wheel' group to have passwordless sudo  
+     lineinfile:
+      state: present
+      regexp: '^%wheel'
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
 
-  
    
    - name: Add the user 'svc_ansible' with a bash shell, appending the group 'wheel' to the user's groups
      user:
