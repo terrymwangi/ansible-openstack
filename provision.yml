@@ -1,7 +1,5 @@
 ---
 - name: Add User and distribute key 
-  wait_for:
-   port: 22
   gather_facts: no
   hosts: all
 
