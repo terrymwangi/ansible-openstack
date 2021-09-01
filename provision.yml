@@ -1,14 +1,11 @@
 ---
 - name: Add User and distribute key 
 
-  gather_facts: false
+  gather_facts: yes
   become: yes 
   hosts: all
 
   tasks :
-   - ping:
-       crash: data
-       
        
    - name: Wait 300 seconds, but only start checking after 60 seconds
      wait_for_connection:
