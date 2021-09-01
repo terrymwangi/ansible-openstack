@@ -1,7 +1,7 @@
 ---
 - name: Add User and distribute key 
 
-  gather_facts: yes
+  gather_facts: false
   become: yes 
   hosts: all
 
