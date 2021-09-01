@@ -2,6 +2,7 @@
 - name: Add User and distribute key 
 
   gather_facts: false
+  become: yes 
   hosts: all
 
   tasks :
