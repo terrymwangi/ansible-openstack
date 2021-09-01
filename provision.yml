@@ -1,7 +1,7 @@
 ---
 - name: Add User and distribute key 
 
-  gather_facts: no
+  gather_facts: false
   hosts: all
 
   tasks :
