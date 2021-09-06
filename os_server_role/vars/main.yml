@@ -11,5 +11,12 @@ server_definitions:
 ###
 ### Centos Servers
 ###
-
+ C-VDI-1:
+  image: "UbuntuOva"
+  ssh_key_name: trial
+  flavor: acc689de-3f3c-4814-9e59-4e6f7a191bdf
+  network: 49609cff-62da-463d-a166-abd643a3a585
+  security_groups: default
+  tags: 
+    os: centos
 
