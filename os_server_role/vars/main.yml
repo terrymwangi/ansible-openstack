@@ -3,7 +3,6 @@ server_definitions:
   image: "UbuntuOva"
   ssh_key_name: trial
   flavor: acc689de-3f3c-4814-9e59-4e6f7a191bdf
-  network: d6452de5-14ab-4b01-9b1a-6a73c8b5e157
   network: 49609cff-62da-463d-a166-abd643a3a585
   security_groups: default
   tags: 
