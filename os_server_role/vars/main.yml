@@ -1,6 +1,6 @@
 server_definitions:
  U-VDI-1:
-  image: "ubuntu"
+  image: "UbuntuOva"
   ssh_key_name: trial
   flavor: acc689de-3f3c-4814-9e59-4e6f7a191bdf
   network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
@@ -13,7 +13,7 @@ server_definitions:
 ###
 
  C-VDI-1:
-  image: "centos"
+  image: "UbuntuOva"
   ssh_key_name: trial
   flavor: acc689de-3f3c-4814-9e59-4e6f7a191bdf
   network: 27b3a2d7-5ca8-4aec-bc9c-09ccd7ce7879
