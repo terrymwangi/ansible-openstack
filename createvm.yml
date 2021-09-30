@@ -1,0 +1,28 @@
+---
+
+- name: Deploy the VMs
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Deploy aspire from template
+    vmware_guest:
+        hostname: "192.168.5.226"
+        validate_certs: False
+        username: "administrator@vsphere.delta"
+        password: "Passw0rd!"
+        datacenter: "Delta"
+        folder: "/Demo"
+        name: "Aspire-Backdoor"
+        state: poweredon
+        template: demo-aspire
+        
+        networks:
+        - name: "1060"
+        - name: "1050"
+
+
+        wait_for_ip_address: yes
+    delegate_to: localhost
+    register: deploy
+
