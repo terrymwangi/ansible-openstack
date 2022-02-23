@@ -13,9 +13,9 @@
         password: "Passw0rd!"
         datacenter: "Delta"
         folder: "/Demo"
-        name: "demo-ubuntu"
+        name: "demo-pfsense"
         state: poweredon
-        template: demo-ubuntu
+        template: demo-pfsense
         
         networks:
         - name: "1060"
