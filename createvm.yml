@@ -13,15 +13,13 @@
         password: "Passw0rd!"
         datacenter: "Delta"
         folder: "/Demo"
-        name: "pfsense-demo"
+        name: "ubuntu-demo"
         state: poweredon
-        template: demo-pfsense
+        template: demo-ubuntu
         
         networks:
         - name: "1060"
-        - name: "1050"
-        - name: "terry"
-        - name: "nic"
+        
         
 
 
