@@ -13,9 +13,9 @@
         password: "Passw0rd!"
         datacenter: "Delta"
         folder: "/Demo"
-        name: "demo-aspire"
+        name: "demo-ubuntu"
         state: poweredon
-        template: demo-aspire
+        template: demo-ubuntu
         
         networks:
         - name: "1060"
