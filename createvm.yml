@@ -19,7 +19,7 @@
         
         networks:
         - name: "1060"
-        - name: "1050"
+        
 
 
         wait_for_ip_address: yes
