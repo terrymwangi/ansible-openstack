@@ -13,7 +13,7 @@
         password: "Passw0rd!"
         datacenter: "Delta"
         folder: "/Demo"
-        name: "demo-pfsense"
+        name: "pfsense-demo"
         state: poweredon
         template: demo-pfsense
         
