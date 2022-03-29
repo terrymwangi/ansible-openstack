@@ -2,28 +2,32 @@
 
 - name: Deploy the VMs
   hosts: localhost
+  vars:
+       random_name:
+         - vmname8
+         - vmname1
+         - vmname2
+         - vmname3
+         - vmname4
+         - vmname5
+         - vmname10
+         - vmname6
+         - vmname7
+         - vmname30
+         - vmname20
   connection: local
   gather_facts: no
   tasks:
-  - name: Deploy aspire from template
+  - name: create vm
     vmware_guest:
-        hostname: "192.168.5.226"
-        validate_certs: False
-        username: "administrator@vsphere.delta"
-        password: "Passw0rd!"
-        datacenter: "Delta"
-        folder: "/Demo"
-        name: "ubuntu-demo"
-        state: poweredon
-        template: demo-ubuntu
-        
-        networks:
-        - name: "1060"
-        
-        
-
-
-        wait_for_ip_address: yes
-    delegate_to: localhost
-    register: deploy
+         name: "{{ random_name | random }}"
+         hostname: "192.168.5.226"
+         validate_certs: False
+         username: "administrator@vsphere.delta"
+         password: "Passw0rd!"
+         datacenter: "Delta"
+         datastore: "datastore2"
+         folder: "/Demo"
+         state: poweredon
+         template: demo-pfsense
 
