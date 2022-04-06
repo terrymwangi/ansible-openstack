@@ -15,6 +15,17 @@
          - vmname7
          - vmname30
          - vmname20
+         - vmname100
+         - vmname101
+         - vmname201
+         - vmname301
+         - vmname401
+         - vmname501
+         - vmname103
+         - vmname601
+         - vmname701
+         - vmname302
+         - vmname202
   connection: local
   gather_facts: no
   tasks:
