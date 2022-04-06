@@ -40,5 +40,5 @@
          datastore: "datastore2"
          folder: "/Demo"
          state: poweredon
-         template: demo-aspire
+         template: demo-pfsense
 
