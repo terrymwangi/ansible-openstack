@@ -29,7 +29,7 @@
   connection: local
   gather_facts: no
   tasks:
-   - name: set vmname
+  - name: set vmname
     set_fact:
       vmname: "{{ random_name | random }}"
 
