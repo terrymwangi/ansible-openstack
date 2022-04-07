@@ -29,6 +29,18 @@
   connection: local
   gather_facts: no
   tasks:
+  - name: create vm
+    vmware_guest:
+         name: "{{ vmname }}"
+         hostname: "192.168.5.226"
+         validate_certs: False
+         username: "administrator@vsphere.delta"
+         password: "Passw0rd!"
+         datacenter: "Delta"
+         datastore: "datastore2"
+         folder: "/Demo"
+         state: poweredon
+         template: demo-ubuntu
   - name: set vmname
     set_fact:
       vmname: "{{ random_name | random }}"
@@ -39,7 +51,7 @@
       delay: 60
       timeout: 0
 
-  - name: Destroy aspire
+  - name: Destroy ubuntu
     vmware_guest:
         hostname: "192.168.5.226"
         validate_certs: False
