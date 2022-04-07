@@ -29,9 +29,13 @@
   connection: local
   gather_facts: no
   tasks:
+   - name: set vmname
+    set_fact:
+      vmname: "{{ random_name | random }}"
+
   - name: create vm
     vmware_guest:
-         name: "{{ random_name | random }}"
+         name: "{{ vmname }}"
          hostname: "192.168.5.226"
          validate_certs: False
          username: "administrator@vsphere.delta"
@@ -41,4 +45,25 @@
          folder: "/Demo"
          state: poweredon
          template: demo-pfsense
+
+  - name: Time before shutdown and destruction
+    tags: sleep60
+    wait_for:
+      delay: 60
+      timeout: 0
+
+  - name: Destroy aspire
+    vmware_guest:
+        hostname: "192.168.5.226"
+        validate_certs: False
+        username: "administrator@vsphere.delta"
+        password: "Passw0rd!"
+        datacenter: "Delta"
+        folder: "/Demo"
+        name: "{{ vmname }}"
+        state: absent
+        force: yes
+    delegate_to: localhost
+    register: facts
+
 
