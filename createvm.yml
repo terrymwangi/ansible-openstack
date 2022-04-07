@@ -46,24 +46,4 @@
          state: poweredon
          template: demo-pfsense
 
-  - name: Time before shutdown and destruction
-    tags: sleep300
-    wait_for:
-      delay: 300
-      timeout: 0
-
-  - name: Destroy aspire
-    vmware_guest:
-        hostname: "192.168.5.226"
-        validate_certs: False
-        username: "administrator@vsphere.delta"
-        password: "Passw0rd!"
-        datacenter: "Delta"
-        folder: "/Demo"
-        name: "{{ vmname }}"
-        state: absent
-        force: yes
-    delegate_to: localhost
-    register: facts
-
 
