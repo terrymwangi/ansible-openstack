@@ -29,6 +29,9 @@
   connection: local
   gather_facts: no
   tasks:
+  - name: set vmname
+    set_fact:
+      vmname: "{{ random_name | random }}"
   - name: create vm
     vmware_guest:
          name: "{{ vmname }}"
@@ -41,14 +44,12 @@
          folder: "/Demo"
          state: poweredon
          template: demo-ubuntu
-  - name: set vmname
-    set_fact:
-      vmname: "{{ random_name | random }}"
+
 
   - name: Time before shutdown and destruction
-    tags: sleep60
+    tags: sleep300
     wait_for:
-      delay: 60
+      delay: 300
       timeout: 0
 
   - name: Destroy ubuntu
