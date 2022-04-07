@@ -47,9 +47,9 @@
          template: demo-pfsense
 
   - name: Time before shutdown and destruction
-    tags: sleep60
+    tags: sleep300
     wait_for:
-      delay: 60
+      delay: 300
       timeout: 0
 
   - name: Destroy aspire
