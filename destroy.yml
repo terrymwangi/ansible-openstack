@@ -1,0 +1,54 @@
+---
+
+- name: Deploy the VMs
+  hosts: localhost
+  vars:
+       random_name:
+         - vmname8
+         - vmname1
+         - vmname2
+         - vmname3
+         - vmname4
+         - vmname5
+         - vmname10
+         - vmname6
+         - vmname7
+         - vmname30
+         - vmname20
+         - vmname100
+         - vmname101
+         - vmname201
+         - vmname301
+         - vmname401
+         - vmname501
+         - vmname103
+         - vmname601
+         - vmname701
+         - vmname302
+         - vmname202
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: set vmname
+    set_fact:
+      vmname: "{{ random_name | random }}"
+
+  - name: Time before shutdown and destruction
+    tags: sleep60
+    wait_for:
+      delay: 60
+      timeout: 0
+
+  - name: Destroy aspire
+    vmware_guest:
+        hostname: "192.168.5.226"
+        validate_certs: False
+        username: "administrator@vsphere.delta"
+        password: "Passw0rd!"
+        datacenter: "Delta"
+        folder: "/Demo"
+        name: "{{ vmname }}"
+        state: absent
+        force: yes
+    delegate_to: localhost
+    register: facts
