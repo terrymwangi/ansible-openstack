@@ -4,28 +4,29 @@
   hosts: localhost
   vars:
        random_name:
-         - vmname8
-         - vmname1
-         - vmname2
-         - vmname3
-         - vmname4
-         - vmname5
-         - vmname10
-         - vmname6
-         - vmname7
-         - vmname30
-         - vmname20
-         - vmname100
-         - vmname101
-         - vmname201
-         - vmname301
-         - vmname401
-         - vmname501
-         - vmname103
-         - vmname601
-         - vmname701
-         - vmname302
-         - vmname202
+         - ubuntu1
+         - ubuntu2
+         - ubuntu3
+         - ubuntu4
+         - ubuntu5
+         - ubuntu6
+         - ubuntu7
+         - ubuntu8
+         - ubuntu9
+         - ubuntu10
+         - ubuntu11
+         - ubuntu12
+         - ubuntu13
+         - ubuntu14
+         - ubuntu15
+         - ubuntu15
+         - ubuntu16
+         - ubuntu17
+         - ubuntu18
+         - ubuntu19
+         - ubuntu20
+         - ubuntu21
+         - ubuntu22
   connection: local
   gather_facts: no
   tasks:
