@@ -4,28 +4,28 @@
   hosts: localhost
   vars:
        random_name:
-         - vmname8
-         - vmname1
-         - vmname2
-         - vmname3
-         - vmname4
-         - vmname5
-         - vmname10
-         - vmname6
-         - vmname7
-         - vmname30
-         - vmname20
-         - vmname100
-         - vmname101
-         - vmname201
-         - vmname301
-         - vmname401
-         - vmname501
-         - vmname103
-         - vmname601
-         - vmname701
-         - vmname302
-         - vmname202
+         - aspire1
+         - aspire2
+         - aspire3
+         - aspire4
+         - aspire5
+         - aspire6
+         - aspire7
+         - aspire8
+         - aspire9
+         - aspire10
+         - aspire11
+         - aspire12
+         - aspire13
+         - aspire14
+         - aspire15
+         - aspire16
+         - aspire17
+         - aspire18
+         - aspire19
+         - aspire20
+         - aspire21
+         - aspire22
   connection: local
   gather_facts: no
   tasks:
@@ -44,6 +44,6 @@
          datastore: "datastore2"
          folder: "/Demo"
          state: poweredon
-         template: demo-pfsense
+         template: demo-aspire
 
 
