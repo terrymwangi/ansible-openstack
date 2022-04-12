@@ -44,6 +44,6 @@
          datastore: "datastore2"
          folder: "/Demo"
          state: poweredon
-         template: aspire-demo
+         template: Aspire-Backdoor
 
 
