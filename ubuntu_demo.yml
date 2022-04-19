@@ -45,3 +45,6 @@
          folder: "/Demo"
          state: poweredon
          template: demo-ubuntu
+         
+         networks:
+         - name: "1050"
