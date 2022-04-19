@@ -45,5 +45,8 @@
          folder: "/Demo"
          state: poweredon
          template: Aspire-Backdoor
+         
+         networks:
+         - name: "1060"
 
 
