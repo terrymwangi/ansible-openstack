@@ -33,7 +33,7 @@
     set_fact:
       vmname: "{{ random_name | random }}"
       
-  - name: Instant Clone a VM
+  - name: Create a VM
     vmware_guest:
       name: "{{ vmname }}"
       hostname: "192.168.5.226"
