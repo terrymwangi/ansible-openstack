@@ -44,6 +44,10 @@
       datastore: "datastore2"
       folder: "/Demo"
       state: poweredon
-      parent_vm: demo-aspire
+      template: demo-ubuntu
+         
+      networks:
+      - name: "1050"
+      - name: "1060"
    
 
