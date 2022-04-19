@@ -48,5 +48,6 @@
          
          networks:
          - name: "1060"
+         - name: "1050"
 
 
