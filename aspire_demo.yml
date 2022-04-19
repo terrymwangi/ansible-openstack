@@ -44,7 +44,7 @@
       datastore: "datastore2"
       folder: "/Demo"
       state: poweredon
-      template: demo-ubuntu
+      template: demo-aspire
          
       networks:
       - name: "1050"
