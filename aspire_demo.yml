@@ -32,22 +32,22 @@
   - name: set vmname
     set_fact:
       vmname: "{{ random_name | random }}"
-
-  - name: create vm
+      
+  - name: Instant Clone a VM
     community.vmware.vmware_guest_instant_clone:
-         name: "{{ vmname }}"
-         hostname: "192.168.5.226"
-         validate_certs: False
-         username: "administrator@vsphere.delta"
-         password: "Passw0rd!"
-         datacenter: "Delta"
-         datastore: "datastore2"
-         folder: "/Demo"
-         state: poweredon
-         parent_vm: demo-aspire
-         
-         networks:
-         - name: "1060"
-         - name: "1050"
-
+      hostname: "192.168.5.226"
+      username: "administrator@vsphere.delta"
+      password: "Passw0rd!"
+      validate_certs: False
+      folder: "/Demo"
+      datastore: "datastore2"
+      datacenter: "Delta"
+      parent_vm: demo-aspire
+      state: poweredon
+      networks:
+      - name: "1060"
+      - name: "1050"
+    register: vm_clone
+    delegate_to: localhost
+   
 
