@@ -44,7 +44,7 @@
          datastore: "datastore2"
          folder: "/Demo"
          state: poweredon
-         template: demo-aspire1
+         template: aspire14
          
          networks:
          - name: "1060"
