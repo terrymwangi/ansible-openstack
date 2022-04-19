@@ -34,21 +34,16 @@
       vmname: "{{ random_name | random }}"
       
   - name: Instant Clone a VM
-    community.vmware.vvmware_guest_info:
+    vmware-guest:
       name: "{{ vmname }}"
       hostname: "192.168.5.226"
+      validate_certs: False
       username: "administrator@vsphere.delta"
       password: "Passw0rd!"
-      validate_certs: False
-      folder: "/Demo"
-      datastore: "datastore2"
       datacenter: "Delta"
-      parent_vm: demo-aspire
+      datastore: "datastore2"
+      folder: "/Demo"
       state: poweredon
-      networks:
-      - name: "1060"
-      - name: "1050"
-    register: vm_clone
-    delegate_to: localhost
+      parent_vm: demo-aspire
    
 
