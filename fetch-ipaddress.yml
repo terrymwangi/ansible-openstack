@@ -51,9 +51,9 @@
       - name: "1060"
       
   - name: Time before shutdown and destruction
-    tags: sleep150
+    tags: sleep300
     wait_for:
-      delay: 150
+      delay: 300
       timeout: 0
       
       
