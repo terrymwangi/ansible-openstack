@@ -1,15 +1,57 @@
 ---
-- name: New VM, install Apache and send notification to Slack
-  hosts:localhost
-  user: root
-  sudo: true
 
-## Prompt that asks us what we want to call the new virtual machine
-  vars_prompt:
-    - name: "guest"
-      prompt: "VM name?"
-      private: no
+---
 
+- name: Deploy the VMs
+  hosts: localhost
+  vars:
+       random_name:
+         - aspire1
+         - aspire2
+         - aspire3
+         - aspire4
+         - aspire5
+         - aspire6
+         - aspire7
+         - aspire8
+         - aspire9
+         - aspire10
+         - aspire11
+         - aspire12
+         - aspire13
+         - aspire14
+         - aspire15
+         - aspire16
+         - aspire17
+         - aspire18
+         - aspire19
+         - aspire20
+         - aspire21
+         - aspire22
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: set vmname
+    set_fact:
+      vmname: "{{ random_name | random }}"
+      
+  - name: Create a VM
+    vmware_guest:
+      name: "{{ vmname }}"
+      hostname: "192.168.5.226"
+      validate_certs: False
+      username: "administrator@vsphere.delta"
+      password: "Passw0rd!"
+      datacenter: "Delta"
+      datastore: "datastore2"
+      folder: "/Demo"
+      state: poweredon
+      template: demo-aspire
+         
+      networks:
+      - name: "1050"
+      - name: "1060"
+   
 ## Variables to connect to vCenter, Template and location of the new VM
   vars:
     vcenter: IP_or_FQDN_of_vCenter
