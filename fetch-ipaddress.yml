@@ -51,12 +51,6 @@
       - name: "1050"
       - name: "1060"
       
-  - name: Time before shutdown and destruction
-    tags: sleep300
-    wait_for:
-      delay: 300
-      timeout: 0
-      
       
   - name: Gather facts from standalone ESXi server having datacenter as 'ha-datacenter'
     vmware_guest_facts:
