@@ -63,16 +63,16 @@
     delegate_to: localhost
     register: facts
 
-  - name: Set fact for the dictionary that contains all the variables to be parsed
-    set_fact:
-      tower_response: '{{ tower_response | from_json }}'
-    no_log: False
+#   - name: Set fact for the dictionary that contains all the variables to be parsed
+#     set_fact:
+#       tower_response: '{{ tower_response | from_json }}'
+#     no_log: False
 
-    # Print as loop item
-  - name: Tower Response
-    set_fact:
-      dummy: value # Just to make some task without output
-    with_items:
-      - "{{ tower_response | to_json }}"
+#     # Print as loop item
+#   - name: Tower Response
+#     set_fact:
+#       dummy: value # Just to make some task without output
+#     with_items:
+#       - "{{ tower_response | to_json }}"
 
 
