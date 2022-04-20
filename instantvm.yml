@@ -30,7 +30,7 @@
   gather_facts: no
   tasks:
   - name: Instant Clone a VM
-    community.vmware.vmware_guest_instant_clone_module:
+    community.vmware.vmware_guest_instant_clone:
       name: instantvm1
       hostname: "192.168.5.226"
       username: "administrator@vsphere.delta"
