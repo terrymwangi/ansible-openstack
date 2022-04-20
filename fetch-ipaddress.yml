@@ -65,7 +65,6 @@
       password: "Passw0rd!"
       datacenter: "Delta"
       datastore: "datastore2"
-      folder: "/Demo"
     delegate_to: localhost
     register: facts
 
