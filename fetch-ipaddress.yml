@@ -64,7 +64,6 @@
       username: "administrator@vsphere.delta"
       password: "Passw0rd!"
       datacenter: "Delta"
-      datastore: "datastore2"
       name: "{{ vmname }}"
     delegate_to: localhost
     register: facts
