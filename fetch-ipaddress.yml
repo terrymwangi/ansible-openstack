@@ -1,0 +1,74 @@
+---
+- name: New VM, install Apache and send notification to Slack
+  hosts:localhost
+  user: root
+  sudo: true
+
+## Prompt that asks us what we want to call the new virtual machine
+  vars_prompt:
+    - name: "guest"
+      prompt: "VM name?"
+      private: no
+
+## Variables to connect to vCenter, Template and location of the new VM
+  vars:
+    vcenter: IP_or_FQDN_of_vCenter
+    user: vCenter_user
+    passwd: vCenter_user_password
+    template: template_name
+    rpool: "/Resources" ## <- Default when no Resource Pool is specified
+    cluster: "my_cluster" ## I don't specify ESXi in the Playbook because the Cluster has DRS
+
+## Task that creates the virtual machine from the Template. Go!
+  tasks:
+    -vsphere_guest:
+        vcenter_hostname: "{{ vcenter }}"
+        username: "{{ user }}"
+        password: "{{ passwd }}"
+        guest: "{{ guest }}"
+        from_template: "yes"
+        template_src: "{{ template }}"
+        resource_pool: "{{ rpool }}"
+        cluster: "{{ cluster }}"
+    - pause: seconds=60 ## Pause to wait for the VM to power on and vCenter to capture the IP
+
+## The following lines collect "facts" of the VM and allow to take the IP that it took by DHCP
+    -vsphere_guest:
+        vcenter_hostname: "{{ vcenter }}"
+        username: "{{ user }}"
+        password: "{{ passwd }}"
+        guest: "{{ guest }}"
+        vmware_guest_facts: yes
+
+## Debug to validate that the Playbook has the IP of the VM
+    - debug: msg="IP is {{ hw_eth0.ipaddresses[0] }}"
+
+## Add the IP to the hosts inventory to customize it
+    - add_host: name={{ hw_eth0.ipaddresses[0] }} groups=virtual
+
+-
+  host:virtual
+
+## Debug to validate that we have the name of the VM to change the hostname (Review Fact Caching)
+  tasks:
+    - debug: msg="{{ hostvars['localhost']['hw_name'] }}"
+
+## Chores. Install Apache, start it and change the hostname of the virtual machine.
+  tasks:
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+    - name: start apache
+      service: name=apache2 state=started
+    - name: rename host
+      hostname: name="{{ hostvars['localhost']['hw_name'] }}"
+
+-
+  hosts:localhost
+
+## Now just for showoff we send a notification to Slack
+  tasks:
+    - name: Notification to Slack
+      local_action:
+        module:slack
+        token: admfñfxfm---API-key-to-receive-notifications---akjnelner
+        msg: "Server {{ hostvars['localhost']['hw_name'] }} ready! IP: {{ hw_eth0.ipaddresses[0] }}"
