@@ -70,15 +70,15 @@
     register: facts
 
   - name: Set fact for the dictionary that contains all the variables to be parsed
-      set_fact:
-        tower_response: '{{ tower_response | default({}) }}'
-      no_log: true
+    set_fact:
+      tower_response: '{{ tower_response | default({}) }}'
+    no_log: true
 
     # Print as loop item
   - name: Tower Response
-      set_fact:
-        dummy: value # Just to make some task without output
-      with_items:
-        - "{{ tower_response | to_json }}"
+    set_fact:
+      dummy: value # Just to make some task without output
+    with_items:
+      - "{{ tower_response | to_json }}"
 
 
