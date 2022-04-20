@@ -65,7 +65,7 @@
 
   - name: Set fact for the dictionary that contains all the variables to be parsed
     set_fact:
-      tower_response: '{{ tower_response | default({}) }}'
+      tower_response: '{{ tower_response | from_json }}'
     no_log: False
 
     # Print as loop item
