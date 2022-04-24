@@ -51,9 +51,9 @@
       - name: "1060"
    
   - name: Time before shutdown and destruction
-    tags: sleep300
+    tags: sleep480
     wait_for:
-      delay: 300
+      delay: 480
       timeout: 0
 
   - name: Destroy aspire
