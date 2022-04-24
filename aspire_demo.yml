@@ -35,7 +35,7 @@
       
   - name: Create a VM
     vmware_guest:
-      name: "{{ vmname }}"
+      name: "aspire + {{ vmname }}"
       hostname: "192.168.5.226"
       validate_certs: False
       username: "administrator@vsphere.delta"
