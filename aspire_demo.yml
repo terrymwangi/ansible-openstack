@@ -35,7 +35,7 @@
       
   - name: Create a VM
     vmware_guest:
-      name: "aspire + {{ vmname }}"
+      name: "{{ vmname }}"
       hostname: "192.168.5.226"
       validate_certs: False
       username: "administrator@vsphere.delta"
@@ -56,7 +56,7 @@
       delay: 300
       timeout: 0
 
-  - name: Destroy ubuntu
+  - name: Destroy aspire
     vmware_guest:
         hostname: "192.168.5.226"
         validate_certs: False
