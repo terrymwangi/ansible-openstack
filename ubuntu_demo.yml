@@ -45,6 +45,7 @@
          folder: "/Demo"
          state: poweredon
          template: demo-ubuntu
+         wait_for_ip_address: yes
          
          networks:
          - name: "1050"
