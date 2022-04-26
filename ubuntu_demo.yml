@@ -44,7 +44,7 @@
          datastore: "datastore2"
          folder: "/Demo"
          state: poweredon
-         template: demo-ubuntu
+         template: demo-server2
          wait_for_ip_address: yes
          
          networks:
