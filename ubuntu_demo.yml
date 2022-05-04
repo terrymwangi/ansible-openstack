@@ -51,9 +51,9 @@
          - name: "1060"
          
   - name: Time before shutdown and destruction
-    tags: sleep90
+    tags: sleep120
     wait_for:
-      delay: 90
+      delay: 120
       timeout: 0
 
   - name: Destroy ubuntu
