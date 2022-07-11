@@ -48,7 +48,6 @@
       wait_for_ip_address: yes
          
       networks:
-      - name: "1050"
       - name: "1060"
       
   - name: Gather facts from standalone ESXi server having datacenter as 'ha-datacenter'
