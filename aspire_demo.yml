@@ -44,7 +44,7 @@
       datastore: "datastore2"
       folder: "/Demo"
       state: poweredon
-      template: demo-aspire
+      template: aspire-demo
       wait_for_ip_address: yes
          
       networks:
