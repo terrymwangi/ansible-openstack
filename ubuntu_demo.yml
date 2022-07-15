@@ -49,7 +49,6 @@
          
          networks:
          - name: "1050"
-         - name: "1060"
          
   - name: Time before shutdown and destruction
     tags: sleep120
