@@ -63,9 +63,9 @@
 
    
   - name: Time before shutdown and destruction
-    tags: sleep120
+    tags: sleep60
     wait_for:
-      delay: 120
+      delay: 60
       timeout: 0
 
   - name: Destroy aspire
