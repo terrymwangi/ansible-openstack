@@ -1,0 +1,84 @@
+---
+
+- name: Deploy the VMs
+  hosts: localhost
+  vars:
+       random_name:
+         - aspire1
+         - aspire2
+         - aspire3
+         - aspire4
+         - aspire5
+         - aspire6
+         - aspire7
+         - aspire8
+         - aspire9
+         - aspire10
+         - aspire11
+         - aspire12
+         - aspire13
+         - aspire14
+         - aspire15
+         - aspire16
+         - aspire17
+         - aspire18
+         - aspire19
+         - aspire20
+         - aspire21
+         - aspire22
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: set vmname
+    set_fact:
+      vmname: "{{ random_name | random }}"
+      
+  - name: Create a VM
+    vmware_guest:
+      name: "{{ vmname }}"
+      hostname: "192.168.5.226"
+      validate_certs: False
+      username: "administrator@vsphere.delta"
+      password: "Passw0rd!"
+      datacenter: "Delta"
+      datastore: "datastore2"
+      folder: "/Demo"
+      state: poweredon
+      template: demo-aspire
+      wait_for_ip_address: yes
+         
+      networks:
+      - name: "1060"
+      
+  - name: Gather facts from standalone ESXi server having datacenter as 'ha-datacenter'
+    vmware_guest_facts:
+      hostname: "192.168.5.226"
+      validate_certs: False
+      username: "administrator@vsphere.delta"
+      password: "Passw0rd!"
+      datacenter: "Delta"
+      name: "{{ vmname }}"
+    delegate_to: localhost
+    register: facts
+
+   
+  - name: Time before shutdown and destruction
+    tags: sleep60
+    wait_for:
+      delay: 60
+      timeout: 0
+
+  - name: Destroy aspire
+    vmware_guest:
+        hostname: "192.168.5.226"
+        validate_certs: False
+        username: "administrator@vsphere.delta"
+        password: "Passw0rd!"
+        datacenter: "Delta"
+        folder: "/Demo"
+        name: "{{ vmname }}"
+        state: absent
+        force: yes
+    delegate_to: localhost
+    register: facts
+
