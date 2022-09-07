@@ -34,7 +34,7 @@
       vmname: "{{ random_name | random }}"
       
   - name: Create a VM
-    vmware_guest_facts:
+    vmware_guest:
       name: "{{ vmname }}"
       hostname: "192.168.5.226"
       validate_certs: False
@@ -50,16 +50,16 @@
       networks:
       - name: "1060"
       
-  - name: Gather facts from standalone ESXi server
-    vmware_guest_facts:
-      hostname: "192.168.5.226"
-      validate_certs: False
-      username: "administrator@vsphere.delta"
-      password: "Passw0rd!"
-      datacenter: "Delta"
-      name: "{{ vmname }}"
-    delegate_to: localhost
-    register: facts
+#   - name: Gather facts from standalone ESXi server
+#     vmware_guest_facts:
+#       hostname: "192.168.5.226"
+#       validate_certs: False
+#       username: "administrator@vsphere.delta"
+#       password: "Passw0rd!"
+#       datacenter: "Delta"
+#       name: "{{ vmname }}"
+#     delegate_to: localhost
+#     register: facts
 
    
   - name: Time before shutdown and destruction
